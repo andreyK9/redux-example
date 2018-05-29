@@ -14,18 +14,26 @@ class Cart extends Component {
         }
     }
 
+    unique = (arr) => {
+        var obj = {};
+        
+        for (var i = 0; i < arr.length; i++) {
+            var str = arr[i];
+            obj[str] = true; // запомнить строку в виде свойства объекта
+        }
+        
+        return Object.keys(obj); // или собрать ключи перебором для IE8-
+    };
+
     render() {
-        const cartList = this.props.cart.map((item, idx) => {
-            return <li key={idx} onClick={() => this.props.actions.deleteFromCart(item)}>{item}</li>;
+        const cartList = this.props.cart.map((element, idx) => {
+            return element
         });
+
         return (
             <div className="Cart">
                 <Shelf addItem={this.props.actions.addToCart} />
-
-                <h2>Корзина</h2>
-                <ol>
-                    {cartList}
-                </ol>
+                <div className={cartList != 0 ? 'customBlock ' + this.unique(cartList).join(' ') :"customBlock" }>{~cartList.indexOf('content') ? 'Введите ваше имя:' : ''}</div>
             </div>
         );
     }

@@ -18,6 +18,20 @@
   font-size: large;
 }
 
+.customBlock {
+  width: 100%;
+  height: 100px;
+  background: #ccc;
+}
+
+.border {
+  border: 10px solid red;
+}
+
+.background-color {
+  background-color: yellow;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

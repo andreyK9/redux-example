@@ -6,11 +6,9 @@ class Shelf extends Component {
     
     this.state = {
       shelfItems: [
-        'паста томатная',
-        'огурцы',
-        'кукуруза',
-        'помидоры',
-        'горошек'
+        'border',
+        'background-color',
+        'content'
       ]
     }
   }
@@ -18,6 +16,8 @@ class Shelf extends Component {
   onAddItemToCart = (item) => {
     this.props.addItem(item);
   }
+
+
 
   render() {
     const shelfItems = this.state.shelfItems.map((item, idx) => {

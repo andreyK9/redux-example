@@ -12,10 +12,10 @@ store.subscribe(() => {
   console.log('subscribe',store.getState());
 })
 
-store.dispatch({
-  type:'ADD_PRODUCT',
-  payload:'мюсли'
-})
+// store.dispatch({
+//   type:'ADD_PRODUCT',
+//   payload:'мюсли'
+// })
 
 ReactDOM.render(
   <Provider store={store}>

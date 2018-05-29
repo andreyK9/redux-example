@@ -1,10 +1,13 @@
-const initialState = ['макароны', 'баклажан', 'оливки']//уже в корзине
+import store from "../store";
+import cart from "../components/cart";
+
+const initialState = []//уже в корзине 'макароны', 'баклажан', 'оливки'
 
 
 export default (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_PRODUCT':
-            return [...state, action.payload];
+            return ~state.indexOf(action.payload) ? [...state]: [...state, action.payload];
 
         case 'DELETE_PRODUCT': {
             const arr = [];
